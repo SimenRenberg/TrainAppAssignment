@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../Images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../Styles/LoginModal.css" type="text/css">
+    <link rel="stylesheet" href="../../Styles/global.css" type="text/css">
+    <script src="https://kit.fontawesome.com/fbe2d52971.js"></script>
+    <script src="../../Scripts/LoginModal.js" defer type="text/javascript"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <title>Vy</title>
+
+</head>
+
+<body>
+    <header>
+        <a href="Index">
+            <div class="logo">
+                <img src="../../Images/vy.png" alt="Vy sin logo" height="90" />
+            </div>
+        </a>
+        <ul class="nav">
+            <li><a href="Index"><i class="fas fa-home"></i>Hjem</a></li>
+            <li><a href="#"><i class="fas fa-ticket-alt"></i>Billetter</a></li>
+            <li><a href="Kontakt"><i class="fas fa-envelope"></i>Kontakt</a></li>
+            @if (!(bool)Session["loggetInn"])
+            {
+                <li id="login"><a href="#"><i class="fas fa-user"></i>Logg inn</a></li>
+            }
+            else
+            {
+                <li><a href="AdminIndex"><i class="fas fa-users-cog"></i>Adminforsiden</a></li>
+
+            }
+        </ul>
+    </header>
+    <div class="modal hidden" id="log">
+        <span class="kryss">&times</span>
+        <h3>Logg inn</h3>
+        <div class="login">
+            <form action="Logginn" method="POST" class="LoginForm">
+                <div>Epost</div>
+                <input type="text" name="Epost" id="brukerNavn" placeholder="Epost..." /><br />
+                <div>Passord</div>
+                <input type="password" name="Passord" id="passord" placeholder="Passord..." />
+                @Html.AntiForgeryToken()
+                <button type="submit" name="LoggInn" id="loggInn">Logg inn</button>
+            </form>
+        </div>
+    </div>
+    @RenderBody()
+
+</body>
+</html>

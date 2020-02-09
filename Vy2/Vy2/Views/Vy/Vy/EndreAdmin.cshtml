@@ -1,0 +1,51 @@
+﻿@model List<Model.Administrator>
+
+    <head>
+        <link rel="stylesheet" href="../../Styles/EndreAdmin.css" type="text/css">
+        <script src="../../Scripts/EndreAdmin.js" defer type="text/javascript"></script>
+    </head>
+    <a href="AdminIndex">
+        <button class="tilbake">
+            <i class="fas fa-chevron-left"></i>Tilbake
+        </button>
+    </a>
+
+    <div class="liste">
+        <div class="helper">
+            <h2>Administratorer i systemet</h2>
+            <a href="RegistrerAdmin"><button class="registrer">Registrer administratorer</button></a>
+            <table>
+                <tr>
+                    <td>
+                        @Html.DisplayName("AnsattNr")
+                    </td>
+                    <td>
+                        @Html.DisplayName("Rolle")
+                    </td>
+                    <td>
+                        @Html.DisplayName("Epost")
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                @foreach (var item in Model)
+            {
+                <tr id="rad_@item.AnsattNr">
+                    <td>@Html.DisplayFor(modelItem => item.AnsattNr)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Rolle)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Epost)</td>
+                    <td>
+                        <button class="EndreAdmin" id="@item.AnsattNr">Rediger</button>
+                    </td>
+                    <td>
+                        <button name="@item.AnsattNr" id="@item.AnsattNr" class="SlettAdmin">Slett</button>
+                    </td>
+                </tr>
+            }
+            </table>
+        </div>
+    </div>
+    <div id="feilMelding">
+        <h3>Obs!</h3>
+        <p>Du glemte å lagre endringene på rute <span id="linje"></span></p>
+    </div>

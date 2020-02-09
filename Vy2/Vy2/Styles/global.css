@@ -1,0 +1,64 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    line-height: 1.5em;
+    
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    background: white;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid black;
+    box-shadow: 1px 0px 10px 1px;
+    margin-bottom: 12vh;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 55%;
+    font-size: 2rem;
+    margin-right: 1em;
+}
+
+    .nav li, .nav a {
+        text-decoration: none;
+        list-style: none;
+        color: black;
+    }
+
+#dark-mode {
+    cursor: pointer;
+    border: solid black 1px;
+    border-radius: 50%;
+}
+
+i {
+    margin-right: 10px;
+}
+
+.tilbake {
+    position: absolute;
+    top: 20%;
+    left: 3%;
+    width: 100px;
+    height: 40px;
+   
+    background: none;
+    border: solid black 1.25px;
+    cursor: pointer;
+    
+}

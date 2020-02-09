@@ -1,0 +1,53 @@
+﻿@model List<Model.DBLogg>
+@{
+    ViewBag.Title = "SeEndringer";
+}
+<head>
+    <link rel="stylesheet" href="../../Styles/SeEndringer.css" type="text/css">
+</head>
+
+<a href="AdminIndex"><button class="tilbake"><i class="fas fa-chevron-left"></i>Tilbake</button></a>
+<div class="liste">
+    
+    <div class="helper">
+        <h2>Endringer gjort i databasen</h2>
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayName("ID")
+                </th>
+                <th>
+                    @Html.DisplayName("Endret tabell")
+                </th>
+                <th>
+                    @Html.DisplayName("Endret kolonne")
+                </th>
+                <th>
+                    @Html.DisplayName("Entitetens ID")
+                </th>
+                <th>
+                    @Html.DisplayName("Gammel verdi")
+                </th>
+                <th>
+                    @Html.DisplayName("Ny verdi")
+                </th>
+                <th>
+                    @Html.DisplayName("Dato endret")
+                </th>
+            </tr>
+            @foreach (var item in Model)
+    {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.EndringsId)</td>
+                <td>@Html.DisplayFor(modelItem => item.Tabell)</td>
+                <td>@Html.DisplayFor(modelItem => item.Kolonne)</td>
+                <td>@Html.DisplayFor(modelItem => item.ID)</td>
+                <td>@Html.DisplayFor(modelItem => item.GammelVerdi)</td>
+                <td>@Html.DisplayFor(modelItem => item.NyVerdi)</td>
+                <td>@Html.DisplayFor(modelItem => item.DatoEndret)</td>
+            </tr>
+    }
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,76 @@
+﻿@model List<Model.TogRute>
+@{
+    ViewBag.Title = "EndreRuter";
+}
+<head>
+    <link rel="stylesheet" href="../../Styles/EnVei.css" type="text/css">
+    <link rel="stylesheet" href="../../Styles/EndreRute.css" type="text/css">
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/EnVei.js" defer type="text/javascript"></script>
+    <script src="../../Scripts/EndreRute.js" defer type="text/javascript"></script>
+</head>
+<a href="AdminRute"><button class="tilbake"><i class="fas fa-chevron-left"></i>Tilbake</button></a>
+    
+<h2>Endre ruter</h2>
+
+<form action="" method="post" id="form">
+    <div id="section">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayName("Avgang")
+                </th>
+                <th>
+                    @Html.DisplayName("Ankomst")
+                </th>
+                <th>
+                    @Html.DisplayName("Startstasjon")
+                </th>
+                <th>
+                    @Html.DisplayName("Endestasjon")
+                </th>
+                <th>
+                    @Html.DisplayName("Platform")
+                </th>
+                <th>
+                    @Html.DisplayName("Nåværende pris")
+                </th>
+                <th>
+                    @Html.DisplayName("RuteID")
+                </th>
+                <th>
+                    @Html.DisplayName("")
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+
+                string avgangTid = item.AvgangTid.ToString("HH:mm");
+                string ankomstTid = item.AnkomstTid.ToString("HH:mm");
+
+                <tr class="ruter" id="rad_@item.RuteId">
+                    <td>@Html.DisplayFor(modelItem => avgangTid)</td>
+                    <td>@Html.DisplayFor(modelItem => ankomstTid)</td>
+                    <td>@Html.DisplayFor(modelItem => item.StartStasjon)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EndeStasjon)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Platform)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Pris)</td>
+                    <td>@Html.DisplayFor(modelItem => item.RuteId)</td>
+                    <td>
+                        <button class="rediger" id="@item.RuteId">Rediger</button>
+
+                        <!--@Html.ActionLink("Rediger", "EndreRute", new { id = item.RuteId })-->
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</form>
+
+<div id="feilMelding">
+    <h3>Obs!</h3>
+    <p>Du glemte å lagre endringene på rute <span id="linje"></span></p>
+</div>

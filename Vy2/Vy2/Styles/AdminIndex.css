@@ -1,0 +1,28 @@
+﻿* {
+    box-sizing: border-box:
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 150px;
+}
+
+.knapp {
+    background: none;
+    border: solid black 1.75px;
+    cursor: pointer;
+    height: 100px;
+    width: 400px;
+    margin-bottom: 1.25em;
+    font-size: 2rem;
+    box-shadow: 0px 0px 10px rgba(0,0,0, 0.25);
+}
+
+.knapp:hover{
+    transform: scale(1.05);
+   
+}
+.knapp:focus, a:focus {
+    outline : none;
+}

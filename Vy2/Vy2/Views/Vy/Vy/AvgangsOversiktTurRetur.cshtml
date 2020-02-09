@@ -1,0 +1,144 @@
+﻿@model List<List<Model.TogRute>>
+
+@{
+
+    ViewBag.Title = "AvgangsOversiktTurRetur";
+}
+    <head>
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="../../Scripts/TurRetur.js" defer type="text/javascript"></script>
+        <script src="https://kit.fontawesome.com/fbe2d52971.js"></script>
+        <link rel="stylesheet" href="../../Styles/TurRetur.css" type="text/css">
+        <link rel="stylesheet" href="../../Styles/global.css" type="text/css">
+    </head>
+
+<p>
+    @Html.ActionLink("Tilbake til start", "Index")
+</p>
+@if (ViewBag.beskjedReiseTil != null) //hvis kunde har valgt en tid over 20:00 for avgang
+{
+    <h3 style="padding-left: 5%;">@ViewBag.beskjedReiseTil</h3>
+}
+else
+{
+    <h2>Avganger for @ViewBag.avgangDato</h2>
+}
+
+
+<form action="HentTurReturReise" method="POST" id="form">
+    <div id="section">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayName("Avgang")
+                </th>
+                <th>
+                    @Html.DisplayName("Ankomst")
+                </th>
+                <th>
+                    @Html.DisplayName("Startstasjon")
+                </th>
+                <th>
+                    @Html.DisplayName("Endestasjon")
+                </th>
+                <th>
+                    @Html.DisplayName("Platform")
+                </th>
+                <th>
+                    @Html.DisplayName("Pris")
+                </th>
+            </tr>
+
+            @foreach (var item in Model[0])
+            {
+                <tr class="ruter" id="@item.RuteId">
+                    <td>
+                        <input type="radio" name="RuteId" id="radio-@item.RuteId" value="@item.RuteId" />
+                        @{
+                            string avgangTid = item.AvgangTid.ToString("HH:mm");
+                            string ankomstTid = item.AnkomstTid.ToString("HH:mm");
+                        }
+                        @Html.DisplayFor(modelItem => avgangTid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => ankomstTid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartStasjon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndeStasjon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Platform)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pris),-
+                    </td>
+                </tr>
+            }
+        </table>
+        @if (ViewBag.beskjedReiseTilbake != null) //hvis kunde har valgt en tid over 20:00 for avgang
+        { 
+            <h3 style="padding-left: 5%;">@ViewBag.beskjedReiseTilbake</h3>
+        }
+        else
+        {
+            <h2>Avganger for hjemreise @ViewBag.returDato</h2>
+        }
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayName("Avgang")
+                </th>
+                <th>
+                    @Html.DisplayName("Ankomst")
+                </th>
+                <th>
+                    @Html.DisplayName("Startstasjon")
+                </th>
+                <th>
+                    @Html.DisplayName("Endestasjon")
+                </th>
+                <th>
+                    @Html.DisplayName("Platform")
+                </th>
+                <th>
+                    @Html.DisplayName("Pris")
+                </th>
+            </tr>
+
+            @foreach (var item in Model[1])
+            {
+                <tr class="returRuter" id="@item.RuteId">
+                    <td>
+                        <input type="radio" name="ReturRuteId" id="radio-@item.RuteId" value="@item.RuteId" />
+                        @{
+                            string avgangTid = item.AvgangTid.ToString("HH:mm");
+                            string ankomstTid = item.AnkomstTid.ToString("HH:mm");
+                        }
+                        @Html.DisplayFor(modelItem => avgangTid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => ankomstTid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartStasjon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndeStasjon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Platform)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pris),-
+                    </td>
+                </tr>
+            }
+        </table>
+        <div id="returAvreiseFeil" align="center"></div>
+        <input type="submit" value="Velg markerte reiser" />
+    </div>
+</form>

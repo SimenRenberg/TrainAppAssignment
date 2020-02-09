@@ -1,0 +1,50 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../Styles/global.css" type="text/css">
+    <link rel="stylesheet" href="../../Styles/KundeInfo.css" type="text/css">
+    <script src="https://kit.fontawesome.com/fbe2d52971.js"></script>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="../../Scripts/TlfFormatering.js" type="text/javascript" defer></script>
+    <meta charset="UTF-8">
+    <title>Gjennomfør kjøp</title>
+</head>
+<body>
+   
+
+    <form action="" onsubmit="" method="POST" id="form">
+        <table>
+
+
+            <tr>
+                <td>
+                    <h3>Mobilnummer</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="input" type="text" name="tlfNrInn" id="tlf" maxlength="10" placeholder="Skriv inn mobilnummer..." pattern="[0-9 ]{10}" title="Mobilnummeret skal bestå av 8 siffer" required />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h3>E-post</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="input" type="text" name="epost" id="epost" placeholder="Skriv inn e-post..." pattern="[a-z0-9._%+-]+@("@")[a-z0-9.-]+\.[a-z]{2,}" title="Ugyldig e-post" required />
+                </td>
+            </tr>
+            
+
+        </table>
+        <input type="submit" value="Gjennomfør kjøp" />
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+﻿@model List<List<Model.TogRute>>
+
+<head>
+    <link rel="stylesheet" href="../../Styles/EndreRuteStatus.css" type="text/css">
+    <script src="../../Scripts/RuteStatus.js" defer type="text/javascript"></script>
+</head>
+<a href="AdminRute"><button class="tilbake"><i class="fas fa-chevron-left"></i>Tilbake</button></a>
+
+<h2>Innstill og gjenopprett ruter</h2>
+<div id="section1">
+
+    <form action="InstillRute" method="POST" id="form2">
+
+        <h3>Aktive ruter:</h3>
+        <table class="table">
+
+            <tabledata>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Avgang")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Ankomst")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Startstasjon")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Endestasjon")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Platform")
+                    </th>
+                    <th>
+                        @Html.DisplayName("RuteID")
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model[1])
+                {
+                    <tr class="returRuter" id="@item.RuteId">
+                        <td>
+                            <input type="hidden" name="RuteId" class="aktivID" value="@item.RuteId" />
+                            @{
+                                string avgangTid = item.AvgangTid.ToString("HH:mm");
+                                string ankomstTid = item.AnkomstTid.ToString("HH:mm");
+                            }
+                            @Html.DisplayFor(modelItem => avgangTid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => ankomstTid)
+                        </td>
+                        <td class="navn">
+                            @Html.DisplayFor(modelItem => item.StartStasjon)
+                        </td>
+                        <td class="navn">
+                            @Html.DisplayFor(modelItem => item.EndeStasjon)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Platform)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RuteId)
+                        </td>
+                        <td>
+                            <input type="button" name="@item.RuteId" id="@item.RuteId" class="InstillRute" value="Innstill" />
+                        </td>
+                    </tr>
+
+
+                }
+            </tabledata>
+        </table>
+    </form>
+
+    <form action="GjenopprettRute" method="POST" id="form1">
+        <h3>Innstilte ruter:</h3>
+        <table class="table2">
+
+            <tabledata>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Avgang")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Ankomst")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Startstasjon")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Endestasjon")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Platform")
+                    </th>
+                    <th>
+                        @Html.DisplayName("RuteID")
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model[0])
+                {
+                    <tr class="ruter" id="@item.RuteId">
+                        <td>
+                            <input type="hidden" class="instilltID" value="@item.RuteId" />
+                            @{
+                                string avgangTid = item.AvgangTid.ToString("HH:mm");
+                                string ankomstTid = item.AnkomstTid.ToString("HH:mm");
+                            }
+                            @Html.DisplayFor(modelItem => avgangTid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => ankomstTid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartStasjon)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndeStasjon)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Platform)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RuteId)
+                        </td>
+                        <td>
+                            <input type="button" id="@item.RuteId" class="Gjenopprett" value="Gjenopprett" />
+                        </td>
+                    </tr>
+                }
+            </tabledata>
+        </table>
+    </form>
+</div>
+
+

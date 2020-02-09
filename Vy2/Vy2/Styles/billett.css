@@ -1,0 +1,215 @@
+body {
+	box-sizing: border-box;
+	font-family: sans-serif;
+	
+}
+.container {
+    display: flex;
+    height: 400px;
+    width: 1000px;
+    flex-direction:column;
+    margin: 15vh 15vw;
+
+}
+
+h2, h4 {
+	margin: 0;
+}
+.billett {
+	position: relative;
+	color: #242323;
+	border-radius: 1.5em;
+	overflow: hidden;
+	width: 1000px;
+	height: 400px;
+	/* border: solid black 1px; */
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	box-shadow: 0px 0px 25px -10px;
+}
+.billett-header, .billett-footer{
+	background-color: #31b81a;
+	font-size: 2rem;
+	padding-left: 1em;
+	height: 1.5em;
+	font-weight: 600;
+}
+
+.billett-footer {
+	display: flex;
+	justify-content: space-between;
+
+}
+.billett-footer h6 {
+	align-self: center;
+	margin: 0 1em 0 0;
+	
+}
+
+.billett-body {
+	font-size: 18px;
+	display: flex;
+	justify-content: space-around;
+
+}
+.reise-info {
+	font-weight: 600;
+	display: flex;
+	flex-direction: column;
+	margin-top: 1.5em;
+}
+.reise-info-fra {
+	
+	text-align: left;
+	margin-bottom: .5em;
+}
+.reise-info-fra::after {
+	content: '';
+	display: block;
+	width: 100%;
+	background-color: #242323;
+	height: 1px;
+}
+/* .reise-info-til {
+	text-align: right;
+} */
+.section1, .section3, .section2 {
+	align-self: center;
+}
+.tabell {
+	display: flex;
+	justify-content: space-between;
+}
+.section3  {
+	display: flex;
+	justify-content: space-between;
+}
+.left-right {
+	text-align: right;
+	 margin-left: 3em; 
+}
+/* .left-left {
+	margin-right: 3em;
+} */
+.right-right {
+	text-align: right;
+	/* margin-left: 3em; */
+}
+.right-left {
+	margin-right: 3em;
+}
+.right-left::after{
+	content: '';
+	display: block;
+	width: 350%;
+	background-color: #242323;
+	height: 1px;
+}
+.left-left::after {
+	content: '';
+	display: block;
+	width: 215%;
+	background-color: #242323;
+	height: 1px;
+}
+
+.venstre {
+	border-bottom: solid 1px black;
+	
+}
+
+table {
+	border-collapse: collapse;
+	margin: 0;
+}
+
+img {
+	margin-left: -17px;
+}
+#tlf {
+	position: relative;
+}
+#tlf::after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: -52px;
+	right: -25px;
+	width: 1px;
+	background-color: #242323;
+	height: 100px;
+}
+#start {
+	position: relative;
+}
+#start::after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: -79px;
+	right: -30px;
+	width: 1px;
+	background-color: #242323;
+	height: 127px;
+}
+
+.bakside {
+	background-color: red;
+}
+.bakside h3 {
+	text-align: center;
+}
+
+.billett::before{
+	content: '';
+	
+	
+	display: block;
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	background-color: white;
+	transform: rotate(45deg);
+	top:-20px;
+	left: 32%;
+	border-radius: 5px;
+
+
+}
+
+.billett::after{
+	content: '';
+	display: block;
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	background-color: white;
+	transform: rotate(45deg);
+	bottom:-20px;
+	left: 32%;
+	border-radius: 5px;
+}
+
+button {
+    background-color: #31b81a;
+    font-size: 20px;
+    color: white;
+    padding: 0.5em 1em 0.5em 1em;
+    cursor: pointer;
+    border-radius: 0.3em;
+    border: none;
+    
+}
+
+button:hover, button:focus {
+        background-color: #329A21;
+        transform: scale(1.25, 1.25);
+}
+
+.sendBillett {
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: space-evenly;
+}
+

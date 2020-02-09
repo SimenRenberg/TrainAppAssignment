@@ -1,0 +1,53 @@
+﻿#avreiseFeil {
+    color: red;
+}
+
+.table, tr, td, th {
+    border: solid black 1px;
+    border-collapse: collapse;
+}
+
+    tr:not(:first-child) {
+        cursor: pointer;
+    }
+
+tr {
+    height: 40px;
+}
+
+table, h2, p {
+    margin: 0.5em 3em 0 3em;
+}
+
+#section {
+    display:flex;
+    flex-direction: column;
+}
+input[type=radio] {
+    display: none;
+}
+
+input[type=submit] {
+    margin-top: 1.5em;
+    align-self: center;
+    background-color: #31b81a;
+    font-size: 20px;
+    color: white;
+    border: none;
+    padding: 0.5em 1em 0.5em 1em;
+    cursor: pointer;
+    border-radius: 0.3em;
+}
+
+    input[type=submit]:hover {
+        background-color: #329A21;
+        transform: scale(1.25, 1.25);
+    }
+
+td {
+    text-align: center;
+}
+
+tr:not(:first-child):hover {
+    background-color: #e6e3e1;
+}

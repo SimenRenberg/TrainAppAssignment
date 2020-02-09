@@ -1,0 +1,67 @@
+﻿
+
+#feilMelding, #feilMelding2, #datoFeil, #returDatoFeil{
+    color: red;
+}
+.billett-valg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overskrift {
+    letter-spacing: 2.5px;
+    margin: 0 0 0 8px;
+    width: 260px;
+}
+
+.input-section {
+    width: 400px;
+}
+
+.input {
+    padding: 0;
+    width: 400px;
+    height: 60px;
+    font-size: 1.5rem;
+    letter-spacing: 2.5px;
+    
+    border: 1px solid #323131;
+    
+}
+
+    .input:focus {
+        outline: none;
+        border: 1.25px solid #323131;
+    }
+
+
+
+button {
+    background-color: #31b81a;
+    font-size: 20px;
+    color: white;
+    border: none;
+    padding: 0.5em 1em 0.5em 1em;
+    margin: 1.5em 0 0 0;
+    cursor: pointer;
+    border-radius: 0.3em;
+}
+
+    button:hover {
+        background-color: #329A21;
+        transform: scale(1.25, 1.25);
+    }
+
+.radio {
+    transform: scale(1.5);
+}
+
+#fraStasjoner, #tilStasjoner {
+    border-bottom: solid 1px black;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+}
+.valgtStasjon {
+    cursor: pointer;
+}

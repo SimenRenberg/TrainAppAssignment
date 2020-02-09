@@ -1,0 +1,76 @@
+﻿*{
+    box-sizing:border-box;
+}
+body {
+    font-family: sans-serif;
+}
+
+tr {
+    cursor: default !important;
+}
+table {
+    table-layout: fixed;
+    width: 95%;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
+}
+
+.rediger, .lagre {
+    width: 70px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    color: white;
+   
+    border-radius: 1em;
+}
+.rediger {
+    background-color: #0595f5;
+}
+.lagre {
+    background-color: #31b81a;
+}
+
+.rediger:focus, .lagre:focus {
+    outline: none;
+}
+
+td {
+    width: 180px !important;
+    height: 50px;
+    padding: 0;
+}
+
+.input {
+    width: 50%;
+
+}
+
+#input_2,#input_3{
+    width:80%;
+}
+
+#feilMelding {
+    border: solid 1.5px black;
+    width: 40%;
+    height: 15%;
+    position: fixed;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: .5em;
+    display: none;
+}
+
+h3, p {
+    margin-left: 10%;
+}
+
+p {
+    color: #0d0c0c;
+    font-size: 18px;
+}
+
+h2 {
+    margin-top: 125px;
+}

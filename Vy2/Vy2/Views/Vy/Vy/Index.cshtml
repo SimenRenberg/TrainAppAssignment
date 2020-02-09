@@ -1,0 +1,81 @@
+﻿
+        
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vy</title>
+    <link rel="stylesheet" href="../../Styles/global.css" type="text/css">
+    <link rel="stylesheet" href="../../Styles/style.css" type="text/css">
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="../../Scripts/script.js" defer type="text/javascript"></script>
+    
+</head>
+<body>
+    
+    @if (ViewBag.feillogginn == "Feil epost eller passord" && !(bool)Session["loggetInn"])
+    {
+        <script type="text/javascript">
+            $(function(){
+            console.log("baler");
+            $(".modal").css("opacity", "1");
+             $(".modal").removeClass("hidden");
+            $(".modal").addClass("visible");
+            $(".modal").show();
+            $("body").css("background-color", "rgba(0,0,0,0.6)");
+            $("#passord").after("<div style='color:red;'>@ViewBag.feillogginn</div>");
+            });
+            
+        </script>
+           // ViewBag.feillogginn="";
+    }
+
+    <form action="" method="post" id="form" autocomplete="off">
+        <section class="billett-valg">
+            <div id="fra-section" class="input-section">
+                <h3 class="overskrift">Hvor vil du reise fra?</h3>
+                <input type="text" name="StartStasjon" id="fra" class="input">
+                <div id="fraStasjoner"></div>
+                <div id="feilMelding"></div>
+            </div>
+            <div id="til-section" class="input-section">
+                <h3 class="overskrift" id="til-overskrift">Hvor vil du reise til ?</h3>
+                <input type="text" name="EndeStasjon" id="til" class="input">
+                <div id="tilStasjoner"></div>
+                <div id="feilMelding2"></div>
+            </div>
+            <div id="billett" class="input-section">
+                <h3 class="overskrift" id="billett-overskrift">Jeg er </h3>
+                <select name="BillettType" class="input">
+                    <option value="Voksen">Voksen</option>
+                    <option value="Student">Student</option>
+                    <option value="Barn">Barn</option>
+                    <option value="Honnør">Honnør</option>
+                </select>
+            </div>
+
+            <div id="type">
+                <input type="radio" name="type" class="radio" id="en-vei" value="enVei"> En vei
+                <input type="radio" name="type" class="radio" id="tur-retur" value="turRetur"> Tur/Retur
+            </div>
+            <div id="når-section" class="input-section">
+                <h3 class="overskrift" id="når-overskrift">Når ?</h3>
+                <input type="datetime-local" name="AvgangTid" class="input" id="når-input" required>
+            </div>
+            <div id="retur-section" class="input-section">
+                <div id="retur">
+                    <h3 class="overskrift" id="retur-overskrift">Når skal du tilbake?</h3>
+                </div>
+                <input type="datetime-local" name="ReturDato" class="input" id="retur-input">
+            </div>
+            <div id="datoFeil"></div>
+            <div id="returDatoFeil"></div>
+            <button type="submit">Gå videre</button>
+        </section>
+    </form>
+
+</body>
+    
+    </html>

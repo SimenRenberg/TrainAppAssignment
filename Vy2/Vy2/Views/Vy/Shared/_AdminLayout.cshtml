@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../../Images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../Styles/LoginModal.css" type="text/css">
+<link rel="stylesheet" href="../../Styles/global.css" type="text/css">
+<script src="https://kit.fontawesome.com/fbe2d52971.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<title>Vy</title>
+
+</head>
+
+<body>
+    <header>
+        <a href="Index">
+            <div class="logo">
+                <img src="../../Images/vy.png" alt="Vy sin logo" height="90" />
+            </div>
+        </a>
+        <ul class="nav">
+            <li><a href="Index"><i class="fas fa-home"></i>Til Forsiden</a></li>
+            <li><a href="AdminIndex"><i class="fas fa-users-cog"></i>Adminforsiden</a></li>
+            <li id="Loggut"><a href="LoggUt"><i class="fas fa-user"></i>Logg ut</a></li>
+        </ul>
+    </header>
+    @RenderBody()
+
+</body>
+</html>
+

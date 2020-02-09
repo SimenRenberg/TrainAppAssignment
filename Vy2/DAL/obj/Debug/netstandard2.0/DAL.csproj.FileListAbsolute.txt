@@ -1,0 +1,3 @@
+C:\Users\s331179\Source\Repos\Vy2\DAL\obj\Debug\netstandard2.0\DAL.csprojAssemblyReference.cache
+C:\Users\s331179\Source\Repos\Vy2\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+C:\Users\s331179\Source\Repos\Vy2\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs

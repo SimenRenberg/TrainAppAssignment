@@ -1,0 +1,250 @@
+﻿@model Model.Billett
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../Styles/global.css" type="text/css">
+    <link rel="stylesheet" href="../../Styles/billett.css" type="text/css">
+    <link rel="stylesheet" href="../../Styles/returbillett.css" type="text/css">
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/fbe2d52971.js"></script>
+    <script type="text/javascript">
+
+        //formaterer telefonnummer til å vise 123 45 678 istedenfor 12345678 så det ser mer oversiktlig ut
+        $(function () {
+
+            var nummer = $("#phone").html();
+            var tlf = nummer.split("");
+            var formatertTlf = "";
+
+            for (i = 0; i < tlf.length; i++) {
+                formatertTlf += tlf[i];
+                if (i == 2 || i == 4) {
+                    formatertTlf += " ";
+                }
+            }
+
+            $("#phone").html(formatertTlf);
+
+            var nummer = $("#phone2").html();
+            var tlf = nummer.split("");
+            var formatertTlf = "";
+
+            for (i = 0; i < tlf.length; i++) {
+                formatertTlf += tlf[i];
+                if (i == 2 || i == 4) {
+                    formatertTlf += " ";
+                }
+            }
+
+            $("#phone2").html(formatertTlf);
+        });
+    </script>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="billett">
+            <div class="billett-header">
+                <img src="../../Images/vy.png" alt="vy sin logo" width="80" />
+            </div>
+            <div class="billett-body">
+                <div class="section1">
+                    <div class="tabell">
+                        <table class="left-left">
+                            <tr>
+                                <td>Kunde Id</td>
+                            </tr>
+                            <tr>
+                                <td id="tlf">Telefonnummer</td>
+                            </tr>
+                            <tr>
+                                <td>Billettype</td>
+                            </tr>
+                            <tr>
+                                <td>Pris</td>
+                            </tr>
+                        </table>
+                        <table class="left-right">
+                            <tr>
+                                <td>@ViewBag.tilBillett.Kunde.KId</td>
+                            </tr>
+
+                            <tr>
+                                <td id="phone">@ViewBag.tilBillett.Kunde.TlfNr</td>
+                            </tr>
+
+                            <tr>
+                                <td>@ViewBag.tilBillett.BillettType</td>
+                            </tr>
+
+                            <tr>
+                                <td>@ViewBag.tilBillett.Pris,-</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="reise-info">
+                        <div class="reise-info-fra">
+                            @ViewBag.togRuteTil.StartStasjon<br />@ViewBag.togRuteFra.AvgangTid.ToString("HH:mm")
+                        </div>
+                        <div class="reise-info-til">
+                            @ViewBag.togRuteTil.EndeStasjon<br />@ViewBag.togRuteTil.AnkomstTid.ToString("HH:mm")
+                        </div>
+                    </div>
+
+                </div>
+                <div class="section2">
+                    <h2>DIN BILLETT</h2>
+                    <img src="../../Images/qr.png" width="200" />
+                </div>
+
+                <div class="section3">
+                    <table class="right-left">
+                        <tr>
+                            <td>Dato</td>
+                        </tr>
+                        <tr>
+                            <td id="start">Startstasjon</td>
+                        </tr>
+                        <tr>
+                            <td>Endestasjon</td>
+                        </tr>
+                        <tr>
+                            <td>Tid</td>
+                        </tr>
+                        <tr>
+                            <td>Plattform</td>
+                        </tr>
+                    </table>
+                    <table class="right-right">
+                        <tr>
+                            <td>@ViewBag.avreiseDato</td>
+                        </tr>
+                        <tr>
+                            <td>@ViewBag.togRuteTil.StartStasjon</td>
+                        </tr>
+                        <tr>
+                            <td>@ViewBag.togRuteTil.EndeStasjon</td>
+                        </tr>
+
+                        <tr>
+                            <td>@ViewBag.togRuteTil.AvgangTid.ToString("HH:mm")</td>
+                        </tr>
+
+                        <tr>
+                            <td>@ViewBag.togRuteTil.Platform</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="billett-footer">
+                <img src="../../Images/vy.png" alt="vy sin logo" width="80" />
+                <h6>@ViewBag.datoForKjøp</h6>
+            </div>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="billett2">
+            <div class="billett-header2">
+                <img src="../../Images/vy.png" alt="vy sin logo" width="80" />
+            </div>
+            <div class="billett-body2">
+                <div class="section4">
+                    <div class="tabell2">
+                        <table class="left-left2">
+                            <tr>
+                                <td>Kunde Id</td>
+                            </tr>
+                            <tr>
+                                <td id="tlf">Telefonnummer</td>
+                            </tr>
+                            <tr>
+                                <td>Billettype</td>
+                            </tr>
+                            <tr>
+                                <td>Pris</td>
+                            </tr>
+                        </table>
+                        <table class="left-right2">
+                            <tr>
+                                <td>@ViewBag.tilBillett.Kunde.KId</td>
+                            </tr>
+
+                            <tr>
+                                <td id="phone2">@ViewBag.tilBillett.Kunde.TlfNr</td>
+                            </tr>
+
+                            <tr>
+                                <td>@ViewBag.tilBillett.BillettType</td>
+                            </tr>
+
+                            <tr>
+                                <td>@ViewBag.tilBillett.Pris,-</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="reise-info2">
+                        <div class="reise-info-fra2">
+                            @ViewBag.togRuteFra.StartStasjon<br />@ViewBag.togRuteFra.AvgangTid.ToString("HH:mm")
+                        </div>
+                        <div class="reise-info-til2">
+                            @ViewBag.togRuteFra.EndeStasjon<br />@ViewBag.togRuteFra.AnkomstTid.ToString("HH:mm")
+                        </div>
+                    </div>
+
+                </div>
+                <div class="section4">
+                    <h2>DIN RETURBILLETT</h2>
+                    <img src="../../Images/qr.png" width="200" />
+                </div>
+
+                <div class="section6">
+                    <table class="right-left2">
+                        <tr>
+                            <td>Dato</td>
+                        </tr>
+                        <tr>
+                            <td id="start2">Startstasjon</td>
+                        </tr>
+                        <tr>
+                            <td>Endestasjon</td>
+                        </tr>
+                        <tr>
+                            <td>Tid</td>
+                        </tr>
+                        <tr>
+                            <td>Platform</td>
+                        </tr>
+                    </table>
+                    <table class="right-right2">
+                        <tr>
+                            <td>@ViewBag.returDato</td>
+                        </tr>                        <tr>
+                            <td>@ViewBag.togRuteFra.StartStasjon</td>
+                        </tr>
+                        <tr>
+                            <td>@ViewBag.togRuteFra.EndeStasjon</td>
+                        </tr>
+                        <tr>
+                            <td>@ViewBag.togRuteFra.AvgangTid.ToString("HH:mm")</td>
+                        </tr>
+                        <tr>
+                            <td>@ViewBag.togRuteFra.Platform</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="billett-footer2">
+                <img src="../../Images/vy.png" alt="vy sin logo" width="80" />
+                <h6>@ViewBag.datoForKjøp</h6>
+            </div>
+        </div>
+        <div class="sendBillett">
+            <button onclick="alert('Billettene er sendt til din E-postadresse')">Send billettene på E-post</button>
+            <button onclick="alert('Billettene er sendt som SMS til din telefon')">Send billettene på SMS</button>
+        </div>
+    </div>
+</body>
+
+</html>

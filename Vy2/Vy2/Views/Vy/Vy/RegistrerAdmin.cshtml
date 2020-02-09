@@ -1,0 +1,71 @@
+﻿@model List<Model.Administrator>
+@{
+    ViewBag.Title = "RegistrerAdmin";
+}
+<head>
+    <link rel="stylesheet" href="../../Styles/RegistrerAdmin.css" type="text/css">
+    <script src="../../Scripts/RegistrerAdmin.js" defer type="text/javascript"></script>
+</head>
+<a href="Administrativt"><button class="tilbake"><i class="fas fa-chevron-left"></i>Tilbake</button></a>
+
+<div class="container">
+    <div class="form">
+
+        <h2>Registrering av nye administratorer</h2>
+
+        <form action="" method="post" id="skjema">
+            Ønsket Epost<br />
+            <input type="text" name="NyEpost" placeholder="Epost..." id="Epost" />
+            <span id="feilEpost" class="feilMelding"></span><br />
+
+            Ønsket Passord<br />
+            <input type="password" name="NyPassord" placeholder="Passord..." id="Passord" /> 
+            <span id="feilPassord" class="feilMelding"></span><br />
+
+            Type admin:<br />
+            <select name="Rolle">
+                <option value="Vanlig">Vanlig admin</option>
+                <option value="Super">Superadmin</option>
+            </select>
+            <br />
+            <input type="submit" value="Registrer" />
+        </form>
+    </div>
+
+    <div class="liste">
+        <h2>Nåværende administratorer til systemet</h2>
+        <table>
+            <tr>
+                <td>
+                    @Html.DisplayName("AnsattNr")
+                </td>
+                <td>
+                    @Html.DisplayName("Rolle")
+                </td>
+                <td>
+                    @Html.DisplayName("Epost")
+                </td>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnsattNr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rolle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Epost)
+                    </td>
+
+                </tr>
+            }
+        </table>
+        <a href="EndreAdmin"><button>Rediger administratorer</button></a>
+        @if (ViewBag.melding != null)
+        {
+        <p>@ViewBag.melding</p>
+        }
+    </div>
+</div>

@@ -1,0 +1,94 @@
+﻿@model Vy.Models.Billett
+
+@{
+    ViewBag.Title = "BillettInfo";
+}
+    <head>
+        <link rel="stylesheet" href="../../global.css" type="text/css">
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    </head>
+<header>
+    <a href="Index">
+        <div class="logo">
+            <img src="../../Images/vy.png" alt="Vy sin logo" height="90" />
+        </div>
+    </a>
+    <ul class="nav">
+        <li><a href="#">Hjem</a></li>
+        <li><a href="#">Billetter</a></li>
+        <li><a href="#">Kontakt</a></li>
+        <li><a href="#">Bruker</a></li>
+    </ul>
+</header>
+<h2>BillettInfo</h2>
+
+<div>
+    <h4>Billett</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Kunde.KId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kunde.KId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kunde.TlfNr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kunde.TlfNr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillettType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillettType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pris)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pris)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TogRute.StartStasjon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TogRute.StartStasjon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TogRute.EndeStasjon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TogRute.EndeStasjon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TogRute.AvgangTid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TogRute.AvgangTid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TogRute.Platform)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TogRute.Platform)
+        </dd>
+
+    </dl>
+</div>

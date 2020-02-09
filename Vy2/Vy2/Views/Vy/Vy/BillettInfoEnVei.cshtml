@@ -1,0 +1,136 @@
+﻿@model Model.Billett
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../Styles/global.css" type="text/css">
+    <link rel="stylesheet" href="../../Styles/billett.css" type="text/css">
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/fbe2d52971.js"></script>
+    <script type="text/javascript">
+        //formaterer telefonnummer til å vise 123 45 678 istedenfor 12345678 så det ser mer oversiktlig ut
+        $(function(){
+
+			var nummer = $("#phone").html();
+			var tlf = nummer.split("");
+			var formatertTlf="";
+
+			for (i=0; i<tlf.length; i++) {
+				formatertTlf+=tlf[i];
+				if (i==2 || i==4) {
+					formatertTlf+=" ";
+				}
+			}
+
+			$("#phone").html(formatertTlf);
+		});
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="billett">
+            <div class="billett-header">
+                <img src="../../Images/vy.png" alt="vy sin logo" width="80" />
+            </div>
+            <div class="billett-body">
+                <div class="section1">
+                    <div class="tabell">
+                        <table class="left-left">
+                            <tr>
+                                <td>Kunde Id</td>
+                            </tr>
+                            <tr>
+                                <td id="tlf">Telefonnummer</td>
+                            </tr>
+                            <tr>
+                                <td>Billettype</td>
+                            </tr>
+                            <tr>
+                                <td>Pris</td>
+                            </tr>
+                        </table>
+                        <table class="left-right">
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.Kunde.KId)</td>
+                            </tr>
+
+                            <tr>
+                                <td id="phone">@Html.DisplayFor(model => model.Kunde.TlfNr)</td>
+                            </tr>
+
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.BillettType)</td>
+                            </tr>
+
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.Pris),-</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="reise-info">
+                        <div class="reise-info-fra">
+                            @ViewBag.togRute.StartStasjon<br />@ViewBag.togRute.AvgangTid.ToString("HH:mm")
+                        </div>
+                        <div class="reise-info-til">
+                            @ViewBag.togRute.EndeStasjon<br />@ViewBag.togRute.AnkomstTid.ToString("HH:mm")
+                        </div>
+                    </div>
+
+                </div>
+                <div class="section2">
+                    <h2>DIN BILLETT</h2>
+                    <img src="../../Images/qr.png" width="200" />
+                </div>
+
+                <div class="section3">
+                    <table class="right-left">
+                        <tr>
+                            <td>Dato for avreise</td>
+                        </tr>
+                        <tr>
+                            <td id="start">Startstasjon</td>
+                        </tr>
+                        <tr>
+                            <td>Endestasjon</td>
+                        </tr>
+                        <tr>
+                            <td>Tid</td>
+                        </tr>
+                        <tr>
+                            <td>Plattform</td>
+                        </tr>
+                    </table>
+                    <table class="right-right">
+                        <tr>
+                            <td>@ViewBag.avreiseDato</td>
+                        </tr>
+                        <tr>
+                            <td>@ViewBag.togRute.StartStasjon</td>
+                        </tr>
+                        <tr>
+                            <td>@ViewBag.togRute.EndeStasjon</td>
+                        </tr>
+
+                        <tr>
+                            <td>@ViewBag.togRute.AvgangTid.Hour:00</td>
+                        </tr>
+
+                        <tr>
+                            <td>@ViewBag.togRute.Platform</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="billett-footer">
+                <img src="../../Images/vy.png" alt="vy sin logo" width="80" />
+                <h6>@ViewBag.datoForKjøp</h6>
+            </div>
+        </div>
+        <div class="sendBillett">
+            <button onclick="alert('Billetten er sendt til din E-postadresse')">Send billett på E-post</button>
+            <button onclick="alert('Billetten er sendt som SMS til din telefon')">Send billett på SMS</button>
+        </div>
+    </div>
+</body>
+</html>

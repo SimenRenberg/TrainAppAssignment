@@ -1,0 +1,32 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+
+table, td, th {
+    border: solid black 1px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table {
+    width: 100%;  
+}
+
+.liste {
+    font-size: 20px;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
+    padding: 1em 0 2em 0;
+    margin: 150px 2em 0 2em;
+}
+
+.helper {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+

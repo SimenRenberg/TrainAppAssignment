@@ -1,0 +1,65 @@
+﻿*{
+    box-sizing: border-box;
+}
+
+
+
+.container {
+    display: flex;
+    font-size: 20px;
+    justify-content: space-around;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
+    padding: 1em 0 2em 0;
+    margin: 150px 2em 0 2em;
+}
+
+.form input[type="text"], input[type="password"] {
+    background: none;
+    height: 38px;
+    width: 60%;
+    margin-bottom: 1.5em;
+    font-size: 20px;
+}
+
+.form {
+    
+    
+    
+}
+select {
+    font-size: 20px;
+    width: 60%;
+    height: 38px;
+}
+
+table, td {
+    border: solid black 1px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+input[type="submit"] {
+    width: 100px;
+    height: 40px;
+    margin-top: 1em;
+    background: none;
+    border: solid black 1.25px;
+    cursor: pointer;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    margin-top: 1em;
+    background: none;
+    border: solid black 1.25px;
+    cursor: pointer;
+}
+
+.feilMelding {
+    color: red;
+}

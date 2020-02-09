@@ -1,0 +1,34 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="../../Styles/kontakt.css" type="text/css">
+    <link rel="stylesheet" href="../../Styles/global.css" type="text/css">
+    <script src="https://kit.fontawesome.com/fbe2d52971.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="../../Scripts/TlfFormatering.js" type="text/javascript" defer></script>
+    
+</head>
+<body>
+    
+    <form action="" method="post" onsubmit="alert('Melding sendt!')">
+    <div class="container">
+        <p>E-post:</p>
+        <div id="input1" class="input">
+            <input type="text"name="epost" placeholder="Din e-postadresse..." pattern="[a-z0-9._%+-]+@("@")[a-z0-9.-]+\.[a-z]{2,}" title="Ugyldig e-post" required>
+        </div>
+        <p>Telefonnummer:</p>
+        <div id="input2" class="input">
+            <input id="tlf" type="text" name="tlfNrInn" placeholder="Ditt telefonnummer..." maxlength="10" pattern="[0-9 ]{10}" title="Mobilnummeret skal bestå av 8 siffer" required>
+        </div>
+        <p>Hva lurer du på?</p>
+        <div id="input3" class="input">
+            <textarea rows="10" cols="100" name="tilbakemelding" required></textarea>
+        </div>
+        <button type="submit">Send melding</button>
+    </div>
+        </form>
+</body>
+</html>

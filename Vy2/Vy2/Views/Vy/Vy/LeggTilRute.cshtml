@@ -1,0 +1,45 @@
+﻿@model Model.TogRute
+
+    <head>
+        <link rel="stylesheet" href="../../Styles/LeggTilRute.css" type="text/css">
+
+        <script src="../../Scripts/LeggTilRute.js" defer></script>
+    </head>
+    <a href="AdminRute"><button class="tilbake"><i class="fas fa-chevron-left"></i>Tilbake</button></a>
+
+    <div class="container">
+        <form action="" method="post" id="skjema">
+            <h2>Legg til en ny rute</h2>
+            Avgang <br />
+            <input type="datetime-local" id="når-input" name="AvgangTid" />
+            <span id="datoFeil"></span>
+            <br />
+            Ankomst <br />
+            <input type="datetime-local" id="retur-input" name="AnkomstTid" />
+            <span id="returDatoFeil"></span>
+            <br />
+            Startstasjon<br />
+            <input type="text" id="startstasjon" name="StartStasjon" />
+            <span id="feilStart"></span>
+            <br />
+            Endestasjon<br />
+            <input type="text" id="endestasjon" name="EndeStasjon" />
+            <span id="feilEnde"></span>
+            <br />
+            Platform<br />
+            <input type="text" id="platform" name="Platform" />
+            <span id="platformFeil"></span>
+            <br />
+            Pris<br />
+            <input type="text" id="pris" name="Pris" />
+            <span id="prisFeil"></span>
+            <br />
+            <input type="submit" id="submit" value="Legg til" />
+            @if (ViewBag.melding != null)
+{
+            <p>@ViewBag.melding</p>
+}
+
+        </form>
+        <img src="../../Images/traintrackpng.png" alt="Bilde av tegnefigurer som bygger togskinner" height="500"/>
+    </div>

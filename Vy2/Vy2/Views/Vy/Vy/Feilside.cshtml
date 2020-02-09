@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Feilside";
+}
+    <head>
+        <link rel="stylesheet" href="../../Styles/global.css" type="text/css">
+        <script src="https://kit.fontawesome.com/fbe2d52971.js"></script>
+    </head>
+
+<h1>Noe gikk galt!</h1>
+<h3>@ViewBag.feilmelding</h3>
+
+@Html.ActionLink("Gå Tilbake", "Index")
+<br />
+<br />
+<img src="../../Images/feilside.gif" width="500" height="350" />

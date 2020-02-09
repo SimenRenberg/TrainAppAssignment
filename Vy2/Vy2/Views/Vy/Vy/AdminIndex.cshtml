@@ -1,0 +1,27 @@
+﻿<head>
+    <link rel="stylesheet" href="../../Styles/AdminIndex.css" type="text/css">
+</head>
+<div class="container">
+    <div class="main">
+
+        <a href="AdminRute"><button class="knapp">Administrer ruter</button></a>
+        <br />
+        
+
+        @if ((bool)Session["SuperLoggetInn"] == true)
+        {
+            <a href="Administrativt"><button class="knapp">Administrer <br/>administratorer</button></a>
+            <br />
+
+        }
+        <a href="SeEndringer"><button class="knapp">Se endringer gjort i databasen</button></a>
+
+    </div>
+    <div class="bilde">
+        <img src="../../Images/Vy.png" alt="Vy sin logo" />
+    </div>
+
+</div>
+
+
+
